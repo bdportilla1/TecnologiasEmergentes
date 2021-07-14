@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  
+<head>
+  <meta charset="utf-8">
+</head>
+<head th:replace="init :: _head"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<body>
+  <header th:replace="init :: _header" > </header>
+  <section class="jumbotron text-center" >
+    <center>
+      <div class="col-md-10 text-center">
+        <h3 style="text-align: left">Acerca de:</h3>
+        <hr class="col-sm-12 text-left">
+        <p class="lead text-justify">
+          El presente proyecto es el resultado de todo el proceso que conlleva la extraccion de datos, preprocesamiento y generacion de datos RDF sobre el tema de "Tecnologias Emergentes".
+        </p>
+         <p class="lead text-justify">
+         1. Selección de fuente de datos: Se ha seleccionado la base de datos cientifica SCOPUS para la extraccion de datos correspondientes a la cadena de busqueda "TITLE-ABS-KEY ( emerging  AND technologies )  AND  ( LIMIT-TO ( PUBYEAR ,  2021 )  OR  LIMIT-TO ( PUBYEAR ,  2020 )  OR  LIMIT-TO ( PUBYEAR ,  2019 )  OR  LIMIT-TO ( PUBYEAR ,  2018 )  OR  LIMIT-TO ( PUBYEAR ,  2017 ) )  AND  ( LIMIT-TO ( SUBJAREA ,  "COMP" ) ) "
+         
+         </p>
+          <p class="lead text-justify">
+          2. Limpieza de datos: En este proceso se realiza de forma manual la correccion de la data obtenida de SCOPUS, como por ejemplo caracteres especiales en algunos campos, separadores dentro de un mismo campo, datos basura, entre otros.
+         </p>
+           <p class="lead text-justify">
+           3. Creacion de modelo ontologico: A partir de la data limpia se procede analizar todos los campos y hacer uso de vocabularios y ontologias existentes para asociarlos y crear un propio modelo.
+             </p>
+         
+         
+         <p class="lead text-justify">
+         4. Preprocesamiento de datos: Se ha desarrollado una aplicacion en el lenguaje de programacion JAVA haciendo uso de la libreria JENA para poder realizar la generacion de datos RDF a partir de la data limpia del punto anterior. El dato de salida sera el archivo RDf basado el modelo que hemos creado.
+           </p>
+           
+           <p class="lead text-justify">
+           5. Selección de repositorio RDF: Se ha seleccionado el repositorio RDF "GraphDB" por la facilidad de uso, ademas permite realizar consultas directas y por la compatibildad con el lenguaje de programacion JAVA.
+           
+               </p>
+               
+                <p class="lead text-justify">
+                6. Presentación de resultados: Este punto es el final en donde se desarrollo una aplicación web que permita realizar consultas SPARQL hacia nuestro repositorio RDF en donde se encuentra nuestra información para poder presentarla hacia el usuario.
+                
+                        </p>
+         
+         
+        <br>
+
+        <h3 style="text-align: left">Autores</h3>
+        <hr class="col-sm-12 text-left">
+        <div class="container">
+          <center>
+            <div class="card-deck col-lg-10">
+              
+              <div class="card ">
+                <center>
+                  <img class="card-img-center" src="img/perro2.png" alt="Bryant Portilla" style="height: 100%; width: 60%">
+                </center>
+                <div class="card-body">
+                  <h5 class="card-title">Bryant Portilla</h5>
+                  <h6><i>Autor 2</i></h6>
+                  <p class="card-text">
+                    Estudiante de Informática y Sistemas de Información
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <div class="text-muted"><i class="fab fa-twitter-square"></i></div>
+                </div>
+              </div>
+            </div>
+          </center>
+        </div>
+
+        <br><br><br>
+        <!--            <h3 style="text-align: left">Resources taken from the source for the development of the Titling Work.</h3>-->
+        <h3 style="text-align: left">Bibliografía</h3>
+        <p class="lead text-justify">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-justify">Candela, G., Escobar, P., Carrasco, R. C., & Marco-Such, M. (2019). A linked open data framework to enhance the discoverability and impact of culture heritage. Journal of Information Science, 45(6), 756–766. https://doi.org/10.1177/0165551518812658</li>
+          <li class="list-group-item text-justify">Hazaël-Massieux, D., & Berners-Lee, T. (2003). The Semantic Web and its applications at W3C. https://www.w3.org/2003/Talks/simo-semwebapp/all.htm</li>
+          <li class="list-group-item text-justify">Ontotext. (2020). GraphDB Documentation. http://graphdb.ontotext.com/documentation/standard/</li>
+          <li class="list-group-item text-justify">Pfenninger, S., DeCarolis, J., Hirth, L., Quoilin, S., & Staffell, I. (2017). The importance of open data and software: Is energy research lagging behind? Energy Policy, 101, 211–215. https://doi.org/10.1016/j.enpol.2016.11.046</li>
+          <li class="list-group-item text-justify">Sharma, V. (2015). What are WEB 2.0 & WEB 3.0? https://www.quora.com/What-are- WEB-2-0-WEB-3-0</li>
+          <li class="list-group-item text-justify">Lapuente, M. J., & Lamarca, C. (2018). RDF.</li>
+        </ul>
+
+        </p>
+        <hr class="col-sm-12 text-left">
+
+      </div>
+      <br>
+  </section>
+</body>
+</html>
